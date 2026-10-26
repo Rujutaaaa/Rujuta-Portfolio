@@ -221,9 +221,9 @@ footer .fine { font-size: 13px; margin-top: 20px; }
   </header>
 
   <div class="shot">
-    <div class="widget num" role="img" aria-label="Widget: CYIENT, 75% confidence, ₹1,233.00, up 7.81% today. Buy above ₹1,268.00, target ₹1,482.50, stop ₹1,197.59.">
+    <div class="widget num" role="img" aria-label="Widget: today's pick, 75% confidence, ₹1,233.00, up 7.81% today. Buy above ₹1,268.00, target ₹1,482.50, stop ₹1,197.59.">
       <div class="head">
-        <div><div class="sym">CYIENT</div><div class="sub">NSE · 75% confidence</div></div>
+        <div><div class="sym">Today's pick</div><div class="sub">NSE · 75% confidence</div></div>
         <span class="buy">Buy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
       </div>
       <div class="low">
@@ -248,7 +248,7 @@ footer .fine { font-size: 13px; margin-top: 20px; }
         <div class="list num" aria-hidden="true">
           <div><span>Scanned</span><span id="scan-count">495</span><i class="fill" id="scan-fill"></i></div>
           <div><span>Setups found</span><span id="scan-setups">2</span></div>
-          <div class="pick" id="scan-pick"><span>Pick</span><span id="scan-name">CYIENT</span></div>
+          <div class="pick" id="scan-pick"><span>Pick</span><span id="scan-name">Ready</span></div>
         </div>
       </div>
       <div><h2>Scans 495 stocks</h2><p>Every weekday at 8:20 AM, using daily prices from Upstox.</p></div>
@@ -258,7 +258,7 @@ footer .fine { font-size: 13px; margin-top: 20px; }
       <div class="visual">
         <div class="wmini num" aria-hidden="true">
           <div class="head">
-            <div><div class="sym">CYIENT</div><div class="sub">NSE · 75% confidence</div></div>
+            <div><div class="sym">Today's pick</div><div class="sub">NSE · 75% confidence</div></div>
             <span class="buy">Buy ↗</span>
           </div>
           <div class="flip">
@@ -280,7 +280,7 @@ footer .fine { font-size: 13px; margin-top: 20px; }
     <article class="card">
       <div class="visual">
         <div class="order num" aria-hidden="true">
-          <div class="top"><span style="color: inherit">BUY CYIENT</span><span>7 shares</span></div>
+          <div class="top"><span style="color: inherit">BUY · Today's pick</span><span>7 shares</span></div>
           <div><span>Trigger</span><span>₹1,268.00</span></div>
           <div><span>Limit</span><span>₹1,294.80</span></div>
           <div class="go"><span class="idle">Place order</span><span class="done">✓ Order placed</span></div>
@@ -295,7 +295,7 @@ footer .fine { font-size: 13px; margin-top: 20px; }
         <div class="chat num" aria-hidden="true">
           <div class="typing"><i></i><i></i><i></i></div>
           <div class="tg">
-            <p><b>CYIENT</b> · BUY · 75%</p>
+            <p><b>Today's pick</b> · BUY · 75%</p>
             <p>Target ₹1,482.50 · Stop ₹1,197.59</p>
             <p>Timeframe 2–10 days</p>
             <div class="time">8:24 AM</div>
@@ -330,7 +330,7 @@ footer .fine { font-size: 13px; margin-top: 20px; }
 </script>
 
 <script>
-/* Scan card loop (6 s, in step with the other cards): count to 495, find 2 setups, land on CYIENT. */
+/* Scan card loop (6 s, in step with the other cards): count to 495, find 2 setups, land on the pick. */
 (function () {
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var count = document.getElementById('scan-count'), fill = document.getElementById('scan-fill'),
@@ -353,7 +353,7 @@ footer .fine { font-size: 13px; margin-top: 20px; }
       pick.classList.add('waiting'); name.textContent = 'Ranking…';
     } else {                              // the pick lands and holds
       fill.style.opacity = 0; count.textContent = '495'; setups.textContent = '2';
-      pick.classList.remove('waiting'); name.textContent = 'CYIENT';
+      pick.classList.remove('waiting'); name.textContent = 'Ready';
     }
     requestAnimationFrame(frame);
   }
