@@ -1,0 +1,355 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230f0f0f%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2233%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22central%22%20font-family%3D%22Helvetica%2CArial%2Csans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2230%22%20letter-spacing%3D%22-1%22%20fill%3D%22%23ffffff%22%3ERK%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAErUlEQVR4nMWXTWhUVxTHf+e+L53JzMRAKY0xRAS7EdKFkLWkNCBSQTEBF7pJF261IFm51FVW4sLo1o27mqiUKhh3uimCSGFsikpKIjjvzbxnzGTePV3MvCFxJtZAon94zJs5583/d+899+MJTRnA5vP5bx3HOS8iPwPfA8L2SIG/VPW3NE2nkyRZyjwluykWiz+JyIyIDKrqNvlulIigqq9U9Zdqtfo7YASgVCqNisgfAKqatqC2q/WZFLAi4rR8foyi6IH09PR8Y4z5U0S+AyzgbLPxx0oBo6r/Wmt/cI0xvxpj+lst32lzWh6pMaYf+FWKxeLfxpghbQ68+QIA0BwKsdb+I6VSaWcq7jNlaBbH15K6bFLtxhhENoZUtX2tl+M47bi1tut/WGs7ngPE7WYuIiRJQqPR6DAKggDf90nTtG0aRRGqiuu65HI5VBXHcYjjmEajgbWWXC6H7/sdEB01ICI0Gg2Gh4fp6+trk6sqSZJQLpdZWlqiUChgrcV1XQ4fPkwQBCwvL/P8+XOCICAMQ0ZGRujt7SWfz/Ps2TPevHmD53kbIUqlkq6/+vr61Bijjx490m56/fq1Tk5Oqu/7WiwWdWBgQMMwVFXV2dlZ9X1fAT179qyurq6qqurjx4+1v79fC4WC9vb2bvDrOu1EhPfv32OtpVarMT8/z5MnT2g0GgwMDHD16lWGhoZYXV0FII5jrLWsra1Rr9eZnJzk5s2b+L7P3bt3GRsb4927d7iu2zEEm857EcEYw9LSEkePHmVkZITp6WnSNCUIgjZAlmeMoVqtMjExwczMDI7jMDc3x8TEBCJCLpfbUKCZuhbhenmex759+0iShMHBQRzHoVarUS6XCYIAVcWYZjtGR0cZHx8H4M6dO5w+fRpgQ9F+NkA2ffbu3cvTp08REfL5PC9fvuT8+fMsLi62AdbnqiovXrzg1KlTeJ73SXPYwtKbz+cBSNOUcrncsUYAbZj9+/dz6dIlkiTZALglgKxYFhcXOXToEMeOHSOKIg4ePMitW7cwxrTHNPu8f/8+s7Oz7Nq1i6mpKS5fvkylUkFENoX4JICqsra2xsrKCnNzc1y7dg2A4eFhjh8/ThzHOI7TXivCMGR8fJz5+XkALl68yJUrV6hUKgBdITYFcF0XEcHzPIwx5HI5bty4QRiGAFy4cIEgCLDW4nkeIkKhUODDhw+cOHGChw8ftiGmp6ep1WpdITZdB6rVKmEYUqlU2lNvYWGB69evE4YhBw4c4MiRI9RqNaIoaue6rku9XufkyZPcu3ePSqXCuXPnmJqaYmVlpQOg63asqvT09OB5HmmatukzuFKphKrSaDSI45hSqYQxhnq9TpIkOI5DvV7HGMOePXtQVXbv3s3y8vL/7wWZ0jRtJ7vuxtmabVIiguM4Hd+z+wwSmoXq+35nb28GsL6rOqhbsez3z8ntFoPmQqR0ORN86mj+cWwruR+Hd+L4vRWJUdUFEVGaR/IvJSsiqqoLBrhNsxe+5NkwG/bbX/3FxMRx/FZEzkhTTithJ3pDgVREnJbXmTiO3xrARFH0wFo7pqqvWhA7UZgiIo6qvrLWjkVR9IDs5ZSv+Hr+H46OnakYoCU2AAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<meta name="description" content="Stocks to Watch: one stock a day on your iPhone Home Screen. A Gen AI experiment by Rujuta Koli.">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrrbylkxle");
+</script>
+</head><body>
+<title>Stocks to Watch</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap">
+<style>
+/* Layout: one centred hero, one product shot, four cards in a 2×2 grid, a short footer. */
+:root {
+  --bg: #FAFAFA;
+  --fg: #171717;
+  --muted: #5E625F;
+  --card: #F1F2F1;
+  --surface: #FFFFFF;
+  --accent: #0A7F56;
+  --on-accent: #FFFFFF;
+  --font: ui-rounded, "Nunito", "SF Pro Rounded", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0F10; --fg: #F2F2F0; --muted: #A3A7A4; --card: #18191A; --surface: #222426;
+    --accent: #3DDC97; --on-accent: #05261A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0F10; --fg: #F2F2F0; --muted: #A3A7A4; --card: #18191A; --surface: #222426;
+  --accent: #3DDC97; --on-accent: #05261A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font);
+  font-size: 17px; line-height: 1.5; font-weight: 500; -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 960px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.num { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px;
+  border-radius: 999px; font: 700 15px/1 var(--font); text-decoration: none;
+  background: var(--fg); color: var(--bg);
+}
+.btn.soft { background: var(--card); color: var(--fg); }
+.btn svg { width: 15px; height: 15px; }
+
+.hero { padding-block: 112px 48px; text-align: center; display: grid; justify-items: center; gap: 18px; }
+.hero h1 { margin: 0; font: 800 clamp(34px, 5.5vw, 44px)/1.1 var(--font); letter-spacing: -0.025em; text-wrap: balance; max-width: 18ch; }
+.hero p { margin: 0; max-width: 30em; color: var(--muted); font-size: 18px; text-wrap: balance; }
+.hero .ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+
+.shot { background: var(--card); border-radius: 32px; padding: 56px 16px; display: grid; place-items: center; }
+
+.widget {
+  width: 364px; max-width: 100%; height: 170px; padding: 16px; border-radius: 24px;
+  background: var(--surface); box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.widget .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.widget .sym { font-size: 17px; font-weight: 800; }
+.widget .sub { font-size: 12px; color: var(--muted); }
+.widget .buy {
+  height: 32px; padding: 0 14px; border-radius: 16px; background: var(--accent); color: var(--on-accent);
+  font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; gap: 6px;
+}
+.widget .buy svg { width: 12px; height: 12px; }
+.widget .low { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.widget .price { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.widget .move { font-size: 13px; color: var(--accent); font-weight: 700; }
+.rows { display: grid; gap: 6px; font-size: 13px; width: 156px; }
+.rows div { display: flex; justify-content: space-between; gap: 8px; }
+.rows span:first-child { color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-block: 20px; }
+.card { background: var(--card); border-radius: 28px; padding: 28px; display: grid; gap: 28px; min-width: 0; }
+.card .visual { min-height: 180px; display: grid; place-items: center; }
+.card h2 { margin: 0 0 4px; font: 800 18px/1.3 var(--font); }
+.card p { margin: 0; color: var(--muted); }
+
+.list { width: 260px; max-width: 100%; display: grid; gap: 8px; }
+.list div { background: var(--surface); border-radius: 14px; padding: 10px 14px; display: flex; justify-content: space-between; font-size: 15px; }
+.list span:last-child { color: var(--muted); }
+.list .pick { background: var(--fg); color: var(--bg); font-weight: 800; }
+.list .pick span:last-child { color: var(--bg); opacity: .7; }
+/* Scan loop: rows fill as the scan runs, then the pick lands */
+.list > div { position: relative; overflow: hidden; }
+.list .fill { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); border-radius: 2px; padding: 0; }
+.list .pick { transition: background .35s ease, color .35s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
+.list .pick.waiting { background: var(--surface); color: var(--muted); font-weight: 600; transform: scale(.97); }
+.list .pick.waiting span:last-child { color: var(--muted); }
+
+.mini { width: 260px; max-width: 100%; display: grid; gap: 10px; }
+.mini .face { background: var(--surface); border-radius: 18px; padding: 14px; display: grid; gap: 6px; font-size: 14px; }
+.mini .face div { display: flex; justify-content: space-between; }
+.mini .face span:first-child { color: var(--muted); }
+
+.order { width: 260px; max-width: 100%; background: var(--surface); border-radius: 18px; padding: 16px; display: grid; gap: 8px; font-size: 14px; }
+.order div { display: flex; justify-content: space-between; }
+.order span:first-child { color: var(--muted); }
+.order .top { font-weight: 800; }
+.order .go { margin-top: 6px; height: 36px; border-radius: 10px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font-weight: 800; }
+
+.tg { width: 270px; max-width: 100%; background: var(--surface); border-radius: 18px 18px 18px 6px; padding: 12px 14px; font-size: 14px; line-height: 1.5; }
+.tg b { font-weight: 800; }
+.tg p { margin: 0; }
+.tg .time { text-align: right; color: var(--muted); font-size: 11px; margin-top: 4px; }
+
+footer { padding-block: 96px 64px; text-align: center; display: grid; justify-items: center; gap: 12px; }
+footer h2 { margin: 0; font: 800 36px/1.1 var(--font); letter-spacing: -0.02em; }
+footer p { margin: 0; color: var(--muted); }
+footer .fine { font-size: 13px; margin-top: 20px; }
+
+/* Inline chips in the hero sentence */
+.chip {
+  display: inline-flex; align-items: center; gap: 5px; padding: 1px 10px 1px 8px; border-radius: 999px;
+  background: var(--surface); color: var(--fg); font-weight: 700; font-size: .92em; white-space: nowrap; vertical-align: 1px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.chip svg { width: 14px; height: 14px; color: var(--accent); }
+
+/* Why section */
+.why { max-width: 560px; margin: 0 auto; padding-block: 80px 40px; text-align: center; display: grid; gap: 12px; }
+.why h2 { margin: 0; font: 800 28px/1.2 var(--font); letter-spacing: -0.02em; }
+.why p { margin: 0; color: var(--muted); }
+
+/* Widget flip loop */
+.wmini {
+  position: relative; width: 300px; max-width: 100%; height: 150px; padding: 14px; border-radius: 22px;
+  background: var(--surface); box-shadow: 0 8px 24px rgba(0,0,0,.07);
+  display: flex; flex-direction: column; justify-content: space-between; font-size: 12px;
+}
+.wmini .head { display: flex; justify-content: space-between; align-items: flex-start; }
+.wmini .sym { font-size: 15px; font-weight: 800; }
+.wmini .sub { color: var(--muted); font-size: 11px; }
+.wmini .buy { height: 28px; padding: 0 12px; border-radius: 14px; background: var(--accent); color: var(--on-accent); font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; }
+.flip { position: relative; height: 62px; overflow: hidden; }
+.flip > div { position: absolute; inset: 0; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.flip .a { animation: sideA 6s infinite cubic-bezier(.4,0,.2,1); }
+.flip .b { animation: sideB 6s infinite cubic-bezier(.4,0,.2,1); }
+.flip .price { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.flip .move { color: var(--accent); font-weight: 700; }
+.flip .r { display: grid; gap: 4px; width: 132px; }
+.flip .r div { display: flex; justify-content: space-between; }
+.flip .r span:first-child { color: var(--muted); }
+.tap {
+  position: absolute; left: 34%; bottom: 26px; width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(23,23,23,.18); opacity: 0; pointer-events: none; animation: tap 6s infinite;
+}
+@keyframes sideA { 0%, 42% { transform: translateY(0); opacity: 1 } 50%, 92% { transform: translateY(-100%); opacity: 0 } 100% { transform: translateY(0); opacity: 1 } }
+@keyframes sideB { 0%, 42% { transform: translateY(100%); opacity: 0 } 50%, 92% { transform: translateY(0); opacity: 1 } 100% { transform: translateY(100%); opacity: 0 } }
+@keyframes tap { 0%, 36% { opacity: 0; transform: scale(.6) } 40% { opacity: 1; transform: scale(1) } 46%, 86% { opacity: 0; transform: scale(1.3) } 90% { opacity: 1; transform: scale(1) } 96%, 100% { opacity: 0; transform: scale(1.3) } }
+
+/* Kite order loop */
+.order .go { position: relative; justify-content: center; overflow: hidden; animation: press 6s infinite; }
+.order .go span { position: absolute; inset: 0; display: grid; place-items: center; color: var(--on-accent); }
+.order .go .done { opacity: 0; animation: done 6s infinite; }
+.order .go .idle { animation: idle 6s infinite; }
+.order .status { color: var(--muted); font-size: 13px; justify-content: center !important; opacity: 0; animation: done 6s infinite; }
+@keyframes press { 0%, 34% { transform: scale(1) } 38% { transform: scale(.95) } 42%, 100% { transform: scale(1) } }
+@keyframes idle { 0%, 40% { opacity: 1 } 46%, 92% { opacity: 0 } 100% { opacity: 1 } }
+@keyframes done { 0%, 40% { opacity: 0 } 46%, 92% { opacity: 1 } 100% { opacity: 0 } }
+
+/* Telegram loop */
+.chat { width: 280px; max-width: 100%; height: 150px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; }
+.typing { align-self: flex-start; background: var(--surface); border-radius: 14px; padding: 10px 12px; display: flex; gap: 4px; animation: typing 6s infinite; }
+.typing i { width: 6px; height: 6px; border-radius: 3px; background: var(--muted); animation: dot 1s infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+.chat .tg { animation: arrive 6s infinite cubic-bezier(.2,.8,.2,1); }
+@keyframes typing { 0% { opacity: 0 } 6%, 26% { opacity: 1 } 30%, 100% { opacity: 0; height: 0; padding-block: 0; margin: 0 } }
+@keyframes arrive { 0%, 28% { opacity: 0; transform: translateY(16px) scale(.97) } 36%, 90% { opacity: 1; transform: none } 100% { opacity: 0; transform: none } }
+@keyframes dot { 0%, 100% { transform: translateY(0); opacity: .5 } 50% { transform: translateY(-3px); opacity: 1 } }
+
+@media (prefers-reduced-motion: reduce) {
+  .flip .a, .flip .b, .tap, .order .go, .order .go span, .order .status, .typing, .typing i, .chat .tg { animation: none !important; }
+  .flip .b, .tap, .order .go .done, .order .status, .typing { opacity: 0; }
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 72px 36px; }
+  .shot { padding: 36px 12px; border-radius: 24px; }
+}
+@media (max-width: 400px) { .rows { width: 138px; } }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>One stock a day, on your Home Screen</h1>
+    <p>
+      Every weekday at 8:20 AM it scans
+      <span class="chip num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 19V5M10 19V9M16 19v-6M22 19H2"></path></svg>495 Nifty 500 stocks,</span>
+      picks the
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle></svg>single best setup</span>
+      and puts it on your
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"></rect><path d="M11 18h2"></path></svg>Home Screen</span>
+      before the market opens.
+    </p>
+    <div class="ctas">
+      <a class="btn" href="#features">See how it works
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="shot">
+    <div class="widget num" role="img" aria-label="Widget: CYIENT, 75% confidence, ₹1,233.00, up 7.81% today. Buy above ₹1,268.00, target ₹1,482.50, stop ₹1,197.59.">
+      <div class="head">
+        <div><div class="sym">CYIENT</div><div class="sub">NSE · 75% confidence</div></div>
+        <span class="buy">Buy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+      </div>
+      <div class="low">
+        <div><div class="price">₹1,233.00</div><div class="move">▲ 7.81% today</div></div>
+        <div class="rows">
+          <div><span>Buy above</span><b>₹1,268.00</b></div>
+          <div><span>Target</span><span>₹1,482.50</span></div>
+          <div><span>Stop</span><span>₹1,197.59</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="why">
+    <h2>Why I built it</h2>
+    <p>The market opens at 9:15. Every morning I'd open a few apps, scroll through charts and still not know what to look at. I wanted one clear idea, with the price to act on, before the bell.</p>
+  </section>
+
+  <div class="grid" id="features">
+    <article class="card">
+      <div class="visual">
+        <div class="list num" aria-hidden="true">
+          <div><span>Scanned</span><span id="scan-count">495</span><i class="fill" id="scan-fill"></i></div>
+          <div><span>Setups found</span><span id="scan-setups">2</span></div>
+          <div class="pick" id="scan-pick"><span>Pick</span><span id="scan-name">CYIENT</span></div>
+        </div>
+      </div>
+      <div><h2>Scans 495 stocks</h2><p>Every weekday at 8:20 AM, using daily prices from Upstox.</p></div>
+    </article>
+
+    <article class="card">
+      <div class="visual">
+        <div class="wmini num" aria-hidden="true">
+          <div class="head">
+            <div><div class="sym">CYIENT</div><div class="sub">NSE · 75% confidence</div></div>
+            <span class="buy">Buy ↗</span>
+          </div>
+          <div class="flip">
+            <div class="a">
+              <div><div class="price">₹1,233.00</div><div class="move">▲ 7.81% today</div></div>
+              <div class="r"><div><span>Buy above</span><b>₹1,268</b></div><div><span>Target</span><span>₹1,482</span></div><div><span>Stop</span><span>₹1,198</span></div></div>
+            </div>
+            <div class="b">
+              <div><svg width="110" height="34" viewBox="0 0 110 34"><polyline id="spark" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points=""></polyline></svg><div class="sub">Last 30 sessions</div></div>
+              <div class="r"><div><span>Risk : reward</span><span>1 : 3.0</span></div><div><span>Hold for</span><span>2–10 days</span></div><div><span>Skip above</span><span>₹1,295</span></div></div>
+            </div>
+          </div>
+          <span class="tap"></span>
+        </div>
+      </div>
+      <div><h2>Widget for iPhone</h2><p>Tap to flip from the price to the plan. Works in light, dark and Liquid Glass.</p></div>
+    </article>
+
+    <article class="card">
+      <div class="visual">
+        <div class="order num" aria-hidden="true">
+          <div class="top"><span style="color: inherit">BUY CYIENT</span><span>7 shares</span></div>
+          <div><span>Trigger</span><span>₹1,268.00</span></div>
+          <div><span>Limit</span><span>₹1,294.80</span></div>
+          <div class="go"><span class="idle">Place order</span><span class="done">✓ Order placed</span></div>
+          <div class="status">AMO · waits for ₹1,268</div>
+        </div>
+      </div>
+      <div><h2>Buy on Kite</h2><p>Opens Kite with the order filled in. You review it and place it.</p></div>
+    </article>
+
+    <article class="card">
+      <div class="visual">
+        <div class="chat num" aria-hidden="true">
+          <div class="typing"><i></i><i></i><i></i></div>
+          <div class="tg">
+            <p><b>CYIENT</b> · BUY · 75%</p>
+            <p>Target ₹1,482.50 · Stop ₹1,197.59</p>
+            <p>Timeframe 2–10 days</p>
+            <div class="time">8:24 AM</div>
+          </div>
+        </div>
+      </div>
+      <div><h2>On Telegram too</h2><p>The same pick arrives as a message, before the market opens.</p></div>
+    </article>
+  </div>
+
+  <footer>
+    <h2>Stocks to Watch</h2>
+    <p>Made by <a href="/" style="color:inherit">Rujuta</a></p>
+    <p class="fine">For research only. Not financial advice.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var closes = [1075.1, 1076.4, 1059.4, 1078.9, 1054.5, 1064.0, 1073.3, 1060.8, 1079.0, 1072.2, 1057.8, 1094.7, 1082.3, 1055.3, 1100.7, 1104.6, 1140.2, 1119.4, 1115.0, 1084.7, 1158.8, 1153.8, 1175.3, 1195.4, 1189.8, 1194.5, 1172.4, 1169.7, 1143.7, 1233.0];
+  var w = 110, h = 34, pad = 3, mn = Math.min.apply(null, closes), mx = Math.max.apply(null, closes);
+  var el = document.getElementById('spark');
+  if (el) el.setAttribute('points', closes.map(function (c, i) {
+    return (i / (closes.length - 1) * w).toFixed(1) + ',' + (pad + (1 - (c - mn) / (mx - mn)) * (h - 2 * pad)).toFixed(1);
+  }).join(' '));
+})();
+</script>
+
+<script>
+/* Scan card loop (6 s, in step with the other cards): count to 495, find 2 setups, land on CYIENT. */
+(function () {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var count = document.getElementById('scan-count'), fill = document.getElementById('scan-fill'),
+      setups = document.getElementById('scan-setups'), pick = document.getElementById('scan-pick'),
+      name = document.getElementById('scan-name');
+  if (!count) return;
+  var start = performance.now(), cycle = 6000;
+  function frame(now) {
+    var t = (now - start) % cycle, k;
+    if (t < 1800) {                       // scanning
+      k = t / 1800; k = 1 - Math.pow(1 - k, 3);
+      count.textContent = Math.round(495 * k);
+      fill.style.width = (k * 100) + '%';
+      fill.style.opacity = 1;
+      setups.textContent = t < 900 ? '0' : '1';
+      pick.classList.add('waiting'); name.textContent = 'Scanning…';
+    } else if (t < 2400) {                // last setup found
+      count.textContent = '495'; fill.style.width = '100%'; fill.style.opacity = 1 - (t - 1800) / 600;
+      setups.textContent = '2';
+      pick.classList.add('waiting'); name.textContent = 'Ranking…';
+    } else {                              // the pick lands and holds
+      fill.style.opacity = 0; count.textContent = '495'; setups.textContent = '2';
+      pick.classList.remove('waiting'); name.textContent = 'CYIENT';
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body></html>
