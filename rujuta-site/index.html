@@ -293,8 +293,8 @@ a{color:inherit;text-decoration:none}
 
 .cta-slot{height:67px;position:relative}
 .cta{
-  position:absolute;top:24px;left:0;height:43px;width:154.781px;
-  display:flex;align-items:center;padding-left:20px;border-radius:999px;overflow:hidden;
+  position:absolute;top:24px;left:0;height:43px;min-width:154.781px;white-space:nowrap;
+  display:flex;align-items:center;padding:0 20px;border-radius:999px;overflow:hidden;
   background:var(--glass);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
   box-shadow:0 1px 2px 0 rgba(0,0,0,.4);
   font-size:14px;line-height:21px;font-weight:600;color:#fff;
@@ -747,15 +747,16 @@ a{color:inherit;text-decoration:none}
 
   // Case studies. Edit copy here; swap `shot` per case once you export each mockup.
   var CASES = [
-    { year:"HDFC Securities", tag:"2025", shot:CARD,
+    { year:"HDFC Securities", tag:"2026", shot:CARD,
       href:"https://medium.com/muzli-design-inspiration/revamping-the-ipo-application-experience-at-hdfc-securities-1096ff3d1dfd?sharedUserId=rujutaaa",
       title:"How we reduced IPO application time from 5 mins to 10 secs",
       body:'Drove a <b>20% increase in IPO market share</b> by simplifying the application journey to a <b>10-seconds</b>, one-click experience. Today, <b>65% of IPO applications</b> are completed via One-Click IPO, contributing to a <b>96.8% CSAT</b> score.' },
-    { year:"HDFC Securities", tag:"2025", shot:"images/case-pricing.webp",
+    { year:"HDFC Securities", tag:"2026", shot:"images/case-pricing.webp",
       href:"https://medium.com/muzli-design-inspiration/the-ux-behind-adding-pricing-plans-to-hdfc-sky-app-4fb14cc18bab?sharedUserId=rujutaaa",
       title:"The UX Behind Adding Pricing Plans to HDFC SKY App",
       body:'Drove a <b>30% increase in plan selection</b> through a savings-first pricing strategy, generating <b>\u20b945\u201350 lakhs</b> in revenue within 4 months and boosting new user acquisitions.' },
-    { year:"HDFC Securities", tag:"2025", shot:"images/case-nps.webp", soon:true,
+    { year:"HDFC Securities", tag:"2026", shot:"images/case-nps.webp",
+      cta:"Reach Out to Discuss", ctaHref:"https://www.linkedin.com/in/rujutaaaaaa/",
       title:"How We Simplified NPS Onboarding for First-Time Investors",
       body:'Breaking down the complexity of NPS into a simple, guided onboarding experience for first-time investors.' }
   ];
@@ -849,7 +850,7 @@ a{color:inherit;text-decoration:none}
       : '<div class="shot-pending">Shot coming soon</div>';
     var cta = c.soon
       ? '<span class="cta soon"><span>Coming Soon</span></span>'
-      : '<a class="cta" href="'+c.href+'" target="_blank" rel="noopener"><span>Read Case Study</span></a>';
+      : '<a class="cta" href="'+(c.ctaHref||c.href)+'" target="_blank" rel="noopener"><span>'+esc(c.cta||"Read Case Study")+'</span></a>';
     var shot = c.href
       ? '<a class="case-shot" href="'+c.href+'" target="_blank" rel="noopener" aria-label="'+esc(c.title)+'">'+art+'</a>'
       : '<div class="case-shot">'+art+'</div>';
